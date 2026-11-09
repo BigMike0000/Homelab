@@ -46,7 +46,7 @@ Retention: **7 daily, 4 weekly**.
 - Backups appear on the server under `vm/200` (pfSense) and `ct/201` (lab-test)
 - Restore tested successfully to a new container ID
 
-![Backup content](../../screenshots/pbs-backups.png)
+![Backup content](../../backup.png)
 
 ## What I learned
 
