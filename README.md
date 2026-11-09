@@ -2,7 +2,7 @@
 
 A small 10" rack homelab I'm building to practice networking, virtualization, and security hands-on after earning **CompTIA Security+**. Everything here runs on used business hardware and free, open-source software.
 
-![Homelab rack](screenshots/rack.jpg)
+![Homelab rack](rack.jpeg)
 
 ## Hardware
 
