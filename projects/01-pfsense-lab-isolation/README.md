@@ -39,7 +39,7 @@ ping -c 3 1.1.1.1            # works ✅
 
 The pfSense firewall log shows each blocked ping tagged with my rule, **"block lab to home network"**, protocol ICMP.
 
-![Firewall log](../../screenshots/pfsense-firewall-log.jpg)
+![Firewall log](../../Pfsense-log.png)
 
 ## Problems & fixes
 
