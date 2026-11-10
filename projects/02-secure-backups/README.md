@@ -44,7 +44,7 @@ Retention: **7 daily, 4 weekly**.
 
 - First backup of the test container: **650 MB compressed to 225 MB in about 9 seconds**
 - Backups appear on the server under `vm/200` (pfSense) and `ct/201` (lab-test)
-- Restore tested successfully to a new container ID
+- Restore tested: 650 MB container restored to a new ID in 7 seconds
 
 ![Backup content](../../backup.png)
 ![Restore test](../../restore.png)
