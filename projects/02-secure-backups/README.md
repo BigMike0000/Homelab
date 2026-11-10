@@ -47,6 +47,7 @@ Retention: **7 daily, 4 weekly**.
 - Restore tested successfully to a new container ID
 
 ![Backup content](../../backup.png)
+![Restore test](../../restore.png)
 
 ## What I learned
 
