@@ -1,31 +1,3 @@
-Claude
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Readme · MD
-03 · Network-Wide Ad Blocking & Service Monitoring
 Pi-hole for DNS filtering and Uptime Kuma for monitoring, with alerts pushed to my phone.
 
 Goal
@@ -45,6 +17,7 @@ Uptime Kuma	pds (backup and monitoring server)	CT 120, Debian 13, unprivileged	1
                      └── blocked domains answered with 0.0.0.0
 Part 1 · Pi-hole
 Why
+
 DNS is the first thing every device does before loading anything. Filtering at that step blocks ads and tracking for every app and browser on a device, not just one browser with an extension. It also gives me a log of every domain a device tries to reach, which is useful for spotting suspicious traffic.
 
 Build steps
@@ -67,15 +40,18 @@ Verifying it
 cmd
 ipconfig /flushdns
 nslookup doubleclick.net 10.0.0.7
+
 A blocked domain comes back as 0.0.0.0. ✅
 
 Pi-hole dashboard
 
 Rollout
+
 My ISP gateway doesn't allow changing the DNS server it hands out, so I can't point the whole house at Pi-hole yet. For now, I set DNS manually per device (10.0.0.7). When I add my own router (UniFi Cloud Gateway), Pi-hole will cover the whole network from one setting.
 
 Part 2 · Uptime Kuma
 Why it runs on the backup server
+
 A monitor that runs on the machine it watches can't report when that machine dies. Running Uptime Kuma on pds means it can still alert me if pve1 or pve2 goes down.
 
 The container also uses public DNS (1.1.1.1), not Pi-hole, so monitoring keeps working even when Pi-hole is the thing that's broken.
@@ -111,6 +87,7 @@ pfSense	HTTPS :443	Lab firewall is up
 Pi-hole DNS	DNS lookup of google.com via 10.0.0.7:53	Pi-hole is actually resolving names, not just serving its web page
 Pi-hole web	HTTP /admin	Pi-hole admin page is up
 Internet	Ping 1.1.1.1	Home internet connection is up
+
 All monitors check every 60 seconds, with 1 retry so a single dropped check doesn't cause a false alarm. Self-signed certificates are accepted for the internal HTTPS checks.
 
 Uptime Kuma dashboard
@@ -120,10 +97,12 @@ Notification type ntfy via ntfy.sh, priority 5 (urgent), applied to every monito
 The ntfy topic is a long random name, because anyone who knows a topic name can read its messages. It's treated like a password and kept out of screenshots.
 Tapping an alert opens the affected service.
 Failure test
+
 I shut down the Pi-hole container on purpose:
 
 Within about a minute, my phone got 🔴 DOWN alerts for Pi-hole DNS and Pi-hole web.
 After starting the container again, I got 🟢 UP alerts.
+
 ntfy alert on phone
 
 Problems & fixes
@@ -152,5 +131,3 @@ Pi-hole for the whole network once my own router is in place
 A second Pi-hole for redundancy
 Uptime Kuma status page for the rack display
 Tailscale subnet router so alert links open from anywhere
-
-Claude finished the response
