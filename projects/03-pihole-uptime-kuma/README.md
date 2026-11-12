@@ -63,7 +63,7 @@ nslookup doubleclick.net 10.0.0.7
 
 A blocked domain comes back as `0.0.0.0`. ✅
 
-![Pi-hole dashboard](../../pihole-dashboard.png.png)
+![Pi-hole dashboard](../../pihole-dashboard.png)
 
 ### Rollout
 
@@ -120,7 +120,7 @@ The container also uses **public DNS (1.1.1.1), not Pi-hole**, so monitoring kee
 
 All monitors check every 60 seconds, with 1 retry so a single dropped check doesn't cause a false alarm. Self-signed certificates are accepted for the internal HTTPS checks.
 
-![Uptime Kuma dashboard](../../uptime-kuma.png.png)
+![Uptime Kuma dashboard](../../uptime-kuma.png)
 
 ### Phone alerts with ntfy
 
@@ -135,7 +135,7 @@ I shut down the Pi-hole container on purpose:
 1. Within about a minute, my phone got **🔴 DOWN** alerts for *Pi-hole DNS* and *Pi-hole web*.
 2. After starting the container again, I got **🟢 UP** alerts.
 
-![ntfy alert on phone](../../ntfy-alert.png.jpeg)
+![ntfy alert on phone](../../ntfy-alert.jpeg)
 
 ---
 
@@ -174,4 +174,3 @@ I shut down the Pi-hole container on purpose:
 - A second Pi-hole for redundancy
 - Uptime Kuma status page for the rack display
 - Tailscale subnet router so alert links open from anywhere
-
